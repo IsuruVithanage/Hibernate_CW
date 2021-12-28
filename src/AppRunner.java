@@ -8,7 +8,7 @@ import util.FactoryConfiguration;
 public class AppRunner{
 
     public static void main(String[] args) {
-        Student s1=new Student("S001","Isuru",22,"Galle","200/03/11","077343434","099834834","Susantha","P001","93243");
+        Student s1=new Student("S002","Isuru",22,"Galle","200/03/11","077343434","099834834","Susantha","P001","93243");
 
         Session session = FactoryConfiguration.getInstance().getSession();
 

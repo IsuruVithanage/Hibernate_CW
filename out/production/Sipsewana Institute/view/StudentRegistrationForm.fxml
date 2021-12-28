@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="391.0" prefWidth="723.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentRegFormController">
+   <children>
+      <ImageView fitHeight="339.0" fitWidth="349.0" layoutX="25.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/regLogo2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="149.0" layoutX="71.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="377.0" layoutY="21.0" text="STUDENT REGISTRATION" textFill="#4cc5bb">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
+      </Label>
+      <TextField layoutX="407.0" layoutY="95.0" prefHeight="25.0" prefWidth="232.0" promptText="Name" />
+      <TextField layoutX="407.0" layoutY="143.0" prefHeight="25.0" prefWidth="232.0" promptText="Name" />
+   </children>
+</AnchorPane>
