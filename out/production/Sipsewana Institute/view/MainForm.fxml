@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 0.5EM;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+<AnchorPane fx:id="context" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 0.5EM;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
    <children>
-      <ImageView fitHeight="344.0" fitWidth="467.0" layoutX="219.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="330.0" fitWidth="449.0" layoutX="237.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/online-education-concept-screen-with-teacher-books-pencils_113065-538.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutY="348.0" prefHeight="55.0" prefWidth="219.0" style="-fx-background-color: #ade0ea;" />
+      <AnchorPane layoutY="351.0" prefHeight="52.0" prefWidth="237.0" style="-fx-background-color: #ade0ea;" />
       <AnchorPane layoutX="187.0" layoutY="388.0" prefHeight="15.0" prefWidth="480.0" style="-fx-background-color: #ade0ea;" />
       <Label layoutX="50.0" layoutY="4.0" prefHeight="38.0" prefWidth="219.0" text="SIPSEWANA INSTITUTE" textFill="#28bdb3">
          <font>
@@ -33,9 +33,9 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="106.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #4cc5bb;" text="Register a student" textFill="WHITE">
+      <JFXButton fx:id="studentBtn" buttonType="RAISED" layoutX="34.0" layoutY="135.0" onMouseClicked="#openStudentDetail" prefHeight="45.0" prefWidth="192.0" style="-fx-background-color: #4cc5bb; -fx-background-radius: 1em;" text="Students" textFill="WHITE">
          <font>
-            <Font name="Arial Bold" size="12.0" />
+            <Font name="Arial Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -44,31 +44,9 @@
             <Glow />
          </effect>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="155.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #4cc5bb;" text="Add a new program" textFill="WHITE">
+      <JFXButton fx:id="programBtn" buttonType="RAISED" layoutX="34.0" layoutY="198.0" onMouseClicked="#openProgramDetails" prefHeight="45.0" prefWidth="192.0" style="-fx-background-color: #4cc5bb; -fx-background-radius: 1em;" text="Programs" textFill="WHITE">
          <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <Glow />
-         </effect>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="202.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #4cc5bb;" text="View Student Details" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <Glow />
-         </effect>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="250.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #4cc5bb;" text="View Program Details" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />

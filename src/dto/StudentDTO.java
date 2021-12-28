@@ -1,11 +1,6 @@
-package entity;
+package dto;
 
-import javax.persistence.*;
-
-
-@Entity
-public class Student implements SuperEntity{
-    @Id
+public class StudentDTO {
     private String studentID;
     private String name;
     private int age;
@@ -15,10 +10,10 @@ public class Student implements SuperEntity{
     private String parentPhoneNumber;
     private String parentName;
 
-    public Student() {
+    public StudentDTO() {
     }
 
-    public Student(String studentID, String name, int age, String address, String dateOfBirth, String phoneNumber, String parentPhoneNumber, String parentName) {
+    public StudentDTO(String studentID, String name, int age, String address, String dateOfBirth, String phoneNumber, String parentPhoneNumber, String parentName) {
         this.studentID = studentID;
         this.name = name;
         this.age = age;
@@ -95,7 +90,7 @@ public class Student implements SuperEntity{
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentDTO{" +
                 "studentID='" + studentID + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +

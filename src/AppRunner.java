@@ -1,23 +1,22 @@
-import entity.Student;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import util.FactoryConfiguration;
 
-public class AppRunner{
+import java.io.IOException;
+
+public class AppRunner extends Application {
 
     public static void main(String[] args) {
-        Student s1=new Student("S002","Isuru",22,"Galle","200/03/11","077343434","099834834","Susantha","P001","93243");
+        launch(args);
+    }
 
-        Session session = FactoryConfiguration.getInstance().getSession();
-
-        Transaction transaction = session.beginTransaction();
-
-        session.save(s1);
-
-        transaction.commit();
-        session.close();
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/MainForm.fxml"))));
+        primaryStage.setTitle("Sipsewana Institute");
+        primaryStage.centerOnScreen();
+        primaryStage.show();
     }
 
 }
