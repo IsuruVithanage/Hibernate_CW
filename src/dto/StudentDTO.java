@@ -6,6 +6,7 @@ public class StudentDTO {
     private int age;
     private String address;
     private String dateOfBirth;
+    private String nic;
     private String phoneNumber;
     private String parentPhoneNumber;
     private String parentName;
@@ -13,12 +14,13 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
-    public StudentDTO(String studentID, String name, int age, String address, String dateOfBirth, String phoneNumber, String parentPhoneNumber, String parentName) {
+    public StudentDTO(String studentID, String name, int age, String address, String dateOfBirth, String nic, String phoneNumber, String parentPhoneNumber, String parentName) {
         this.studentID = studentID;
         this.name = name;
         this.age = age;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
+        this.nic = nic;
         this.phoneNumber = phoneNumber;
         this.parentPhoneNumber = parentPhoneNumber;
         this.parentName = parentName;
@@ -100,5 +102,13 @@ public class StudentDTO {
                 ", parentPhoneNumber='" + parentPhoneNumber + '\'' +
                 ", parentName='" + parentName + '\'' +
                 '}';
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 }

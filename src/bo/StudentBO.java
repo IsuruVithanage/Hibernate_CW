@@ -11,5 +11,5 @@ public interface StudentBO extends SuperBO{
 
     public boolean delete(String id) throws Exception;
 
-    public boolean update(StudentDTO customerDTO) throws Exception;
+    public boolean update(StudentDTO studentDTO) throws Exception;
 }

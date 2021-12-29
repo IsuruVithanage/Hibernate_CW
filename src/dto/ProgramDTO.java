@@ -1,20 +1,15 @@
-package entity;
+package dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-public class Program implements SuperEntity{
-    @Id
+public class ProgramDTO{
     private String programID;
     private String proName;
     private String duration;
     private double fee;
 
-    public Program() {
+    public ProgramDTO() {
     }
 
-    public Program(String programID, String proName, String duration, double fee) {
+    public ProgramDTO(String programID, String proName, String duration, double fee) {
         this.programID = programID;
         this.proName = proName;
         this.duration = duration;
@@ -55,7 +50,7 @@ public class Program implements SuperEntity{
 
     @Override
     public String toString() {
-        return "Program{" +
+        return "ProgramDTO{" +
                 "programID='" + programID + '\'' +
                 ", proName='" + proName + '\'' +
                 ", duration='" + duration + '\'' +

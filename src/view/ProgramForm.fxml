@@ -21,15 +21,15 @@
             <TableColumn prefWidth="82.0" text="Delete" />
         </columns>
       </TableView>
-      <TextField layoutX="128.0" layoutY="77.0" promptText="Program" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
-      <TextField layoutX="289.0" layoutY="77.0" prefHeight="25.0" prefWidth="104.0" promptText="Duration" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
-      <TextField layoutX="409.0" layoutY="77.0" prefHeight="25.0" prefWidth="128.0" promptText="Fee(LKR)" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
+      <TextField fx:id="txtName" layoutX="128.0" layoutY="77.0" promptText="Program" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
+      <TextField fx:id="txtDuration" layoutX="289.0" layoutY="77.0" prefHeight="25.0" prefWidth="104.0" promptText="Duration" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
+      <TextField fx:id="txtFee" layoutX="409.0" layoutY="77.0" prefHeight="25.0" prefWidth="128.0" promptText="Fee(LKR)" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
       <Label layoutX="25.0" layoutY="81.0" text="ID : ">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="81.0" text="CT001" textFill="#4cc5bb">
+      <Label fx:id="lbID" layoutX="52.0" layoutY="81.0" text="CT001" textFill="#4cc5bb">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -49,7 +49,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="556.0" layoutY="78.0" prefHeight="23.0" prefWidth="59.0" style="-fx-background-color: #4cc5bb;" text="ADD" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="556.0" layoutY="78.0" onMouseClicked="#addProgram" prefHeight="23.0" prefWidth="59.0" style="-fx-background-color: #4cc5bb;" text="ADD" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>

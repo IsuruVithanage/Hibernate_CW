@@ -17,12 +17,14 @@ public class BOFactory {
         switch (types) {
             case STUDENT:
                 return new StudentBOImpl();
+            case PROGRAM:
+                return new ProgramBOImpl();
             default:
                 return null;
         }
     }
 
     public enum BoTypes {
-        STUDENT
+        STUDENT,PROGRAM
     }
 }

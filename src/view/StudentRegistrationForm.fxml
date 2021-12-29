@@ -33,7 +33,7 @@
       <TextField fx:id="txtAge" layoutX="389.0" layoutY="160.0" prefHeight="25.0" prefWidth="101.0" promptText="Age" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtPhone" layoutX="520.0" layoutY="160.0" prefHeight="25.0" prefWidth="148.0" promptText="Phonr Number" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtNIC" layoutX="389.0" layoutY="200.0" prefHeight="25.0" prefWidth="133.0" promptText="NIC" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
-      <JFXDatePicker defaultColor="#4cc5bb" layoutX="550.0" layoutY="200.0" prefHeight="25.0" prefWidth="118.0" promptText="Date of BIrth" />
+      <JFXDatePicker fx:id="dob" defaultColor="#4cc5bb" layoutX="550.0" layoutY="200.0" prefHeight="25.0" prefWidth="118.0" promptText="Date of BIrth" />
       <TextArea fx:id="txtAddress" layoutX="389.0" layoutY="243.0" prefHeight="50.0" prefWidth="278.0" promptText="Address" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <JFXComboBox layoutX="390.0" layoutY="427.0" prefHeight="25.0" prefWidth="156.0" promptText="Programs" />
       <TextField fx:id="txtPaName" layoutX="391.0" layoutY="305.0" prefHeight="25.0" prefWidth="278.0" promptText="Parent Name" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
@@ -87,5 +87,6 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
+      <Label fx:id="lbID" layoutX="391.0" layoutY="89.0" prefHeight="17.0" prefWidth="50.0" text="S001" />
    </children>
 </AnchorPane>
