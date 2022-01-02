@@ -1,8 +1,10 @@
 package bo;
 
 import dto.ProgramDTO;
-import dto.StudentDTO;
+import entity.Program;
+import entity.Student;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ProgramBO extends SuperBO {
@@ -10,7 +12,13 @@ public interface ProgramBO extends SuperBO {
 
     List<ProgramDTO> findAll() throws Exception;
 
+    ProgramDTO find() throws Exception;
+
     boolean delete(String id) throws Exception;
 
     boolean update(ProgramDTO programDTO) throws Exception;
+
+    String generateNewProgramId() throws SQLException, ClassNotFoundException;
+
+
 }

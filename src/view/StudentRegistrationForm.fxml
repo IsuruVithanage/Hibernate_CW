@@ -29,13 +29,13 @@
             <Font name="Arial Bold" size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="txtsName" layoutX="389.0" layoutY="112.0" prefHeight="25.0" prefWidth="278.0" promptText="Name" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
+      <TextField fx:id="txtsName" layoutX="389.0" layoutY="119.0" prefHeight="25.0" prefWidth="278.0" promptText="Name" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtAge" layoutX="389.0" layoutY="160.0" prefHeight="25.0" prefWidth="101.0" promptText="Age" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtPhone" layoutX="520.0" layoutY="160.0" prefHeight="25.0" prefWidth="148.0" promptText="Phonr Number" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtNIC" layoutX="389.0" layoutY="200.0" prefHeight="25.0" prefWidth="133.0" promptText="NIC" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <JFXDatePicker fx:id="dob" defaultColor="#4cc5bb" layoutX="550.0" layoutY="200.0" prefHeight="25.0" prefWidth="118.0" promptText="Date of BIrth" />
       <TextArea fx:id="txtAddress" layoutX="389.0" layoutY="243.0" prefHeight="50.0" prefWidth="278.0" promptText="Address" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
-      <JFXComboBox layoutX="390.0" layoutY="427.0" prefHeight="25.0" prefWidth="156.0" promptText="Programs" />
+      <JFXComboBox fx:id="cmpProgram" layoutX="390.0" layoutY="427.0" prefHeight="25.0" prefWidth="156.0" promptText="Programs" />
       <TextField fx:id="txtPaName" layoutX="391.0" layoutY="305.0" prefHeight="25.0" prefWidth="278.0" promptText="Parent Name" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <TextField fx:id="txtpContact" layoutX="391.0" layoutY="341.0" prefHeight="25.0" prefWidth="278.0" promptText="Parent contact" style="-fx-border-color: #b5b5b5; -fx-background-color: white;" />
       <Label layoutX="475.0" layoutY="466.0" text="Price : ">
@@ -60,7 +60,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField layoutX="389.0" layoutY="62.0" prefHeight="25.0" prefWidth="169.0" promptText="Search" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
+      <TextField layoutX="389.0" layoutY="62.0" prefHeight="7.0" prefWidth="140.0" promptText="Search" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
       <JFXButton buttonType="RAISED" layoutX="397.0" layoutY="511.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #ff5959; -fx-background-radius: 0.5em;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
@@ -77,7 +77,7 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="601.0" layoutY="432.0" text="28/12/2021" textFill="#4cc5bb">
+      <Label fx:id="lbRegDate" layoutX="601.0" layoutY="432.0" text="28/12/2021" textFill="#4cc5bb">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
@@ -87,6 +87,14 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lbID" layoutX="391.0" layoutY="89.0" prefHeight="17.0" prefWidth="50.0" text="S001" />
+      <Label fx:id="lbID" layoutX="389.0" layoutY="95.0" prefHeight="17.0" prefWidth="24.0" text="ID : ">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lbsID" layoutX="413.0" layoutY="96.0" text="S001" textFill="#4cc5bb">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

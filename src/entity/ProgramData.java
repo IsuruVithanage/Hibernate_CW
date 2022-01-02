@@ -1,32 +1,57 @@
 package entity;
 
-public class ProgramData implements SuperEntity{
-    private String sID;
-    private String pID;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class ProgramData implements SuperEntity {
+    @Id
+    private String id;
+
+    @ManyToOne
+    @JoinColumn(name = "student_ID", referencedColumnName = "studentID")
+    private Student sID;
+
+    @ManyToOne
+    @JoinColumn(name = "Program_ID", referencedColumnName = "programID")
+    private Program pID;
+
     private String date;
 
     public ProgramData() {
     }
 
-    public ProgramData(String sID, String pID, String date) {
-        this.sID = sID;
-        this.pID = pID;
-        this.date = date;
+    public ProgramData(String id, Student sID, Program pID, String date) {
+        this.setId(id);
+        this.setsID(sID);
+        this.setpID(pID);
+        this.setDate(date);
     }
 
-    public String getsID() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Student getsID() {
         return sID;
     }
 
-    public void setsID(String sID) {
+    public void setsID(Student sID) {
         this.sID = sID;
     }
 
-    public String getpID() {
+    public Program getpID() {
         return pID;
     }
 
-    public void setpID(String pID) {
+    public void setpID(Program pID) {
         this.pID = pID;
     }
 
@@ -41,8 +66,9 @@ public class ProgramData implements SuperEntity{
     @Override
     public String toString() {
         return "ProgramData{" +
-                "sID='" + sID + '\'' +
-                ", pID='" + pID + '\'' +
+                "id='" + id + '\'' +
+                ", sID=" + sID +
+                ", pID=" + pID +
                 ", date='" + date + '\'' +
                 '}';
     }

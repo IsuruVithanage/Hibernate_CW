@@ -2,6 +2,7 @@ package bo;
 
 import dto.StudentDTO;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface StudentBO extends SuperBO{
@@ -12,4 +13,6 @@ public interface StudentBO extends SuperBO{
     public boolean delete(String id) throws Exception;
 
     public boolean update(StudentDTO studentDTO) throws Exception;
+
+    public String generateNewStudentId() throws SQLException, ClassNotFoundException;
 }

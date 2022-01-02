@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import util.LoadFXMLFile;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Optional;
 
 public class ProgramFormController {
@@ -22,12 +23,24 @@ public class ProgramFormController {
     public TextField txtFee;
     public Label lbID;
 
+    public void initialize(){
+        try {
+            setProgramID();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     public void backToMain(MouseEvent mouseEvent) throws IOException {
         LoadFXMLFile.load("MainForm",contextPro);
     }
 
+    public void setProgramID() throws SQLException, ClassNotFoundException {
+        lbID.setText(programBO.generateNewProgramId());
+    }
 
-    public void addProgram(MouseEvent mouseEvent) {
+
+    public void addProgram(MouseEvent mouseEvent){
         ProgramDTO programDTO=new ProgramDTO(
                 lbID.getText(),
                 txtName.getText(),
@@ -49,7 +62,7 @@ public class ProgramFormController {
                     new Alert(Alert.AlertType.WARNING, "Try Again..").show();
                 }
             } catch (Exception e) {
-                new Alert(Alert.AlertType.WARNING, "Duplicate Entry..").show();
+                new Alert(Alert.AlertType.WARNING, e.getClass().getSimpleName()).show();
             }
         }
     }

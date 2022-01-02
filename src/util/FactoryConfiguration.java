@@ -1,6 +1,7 @@
 package util;
 
 import entity.Program;
+import entity.ProgramData;
 import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,6 +25,7 @@ public class FactoryConfiguration {
         configuration.setProperties(p);
         configuration.addAnnotatedClass(Student.class);
         configuration.addAnnotatedClass(Program.class);
+        configuration.addAnnotatedClass(ProgramData.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 

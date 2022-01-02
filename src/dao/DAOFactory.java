@@ -20,12 +20,14 @@ public class DAOFactory {
                 return new StudentDAOImpl();
             case PROGRAM:
                 return new ProgramDAOImpl();
+            case PROGRAMDATA:
+                return new ProgramDataDAOImpl();
             default:
                 return null;
         }
     }
 
     public enum DAOTypes {
-        STUDENT,PROGRAM
+        STUDENT,PROGRAM,PROGRAMDATA
     }
 }

@@ -2,6 +2,7 @@ package dao;
 
 import entity.SuperEntity;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface SuperDAO <Entity extends SuperEntity, ID>{
@@ -14,4 +15,6 @@ public interface SuperDAO <Entity extends SuperEntity, ID>{
     public Entity find(ID id) throws Exception;
 
     public List<Entity> findAll() throws Exception;
+
+    public String generateId() throws SQLException, ClassNotFoundException;
 }

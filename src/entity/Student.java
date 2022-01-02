@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,6 +15,9 @@ public class Student implements SuperEntity{
     private String phoneNumber;
     private String parentPhoneNumber;
     private String parentName;
+
+    @OneToMany(mappedBy = "sID")
+    private List<ProgramData> programDataList;
 
     public Student() {
     }

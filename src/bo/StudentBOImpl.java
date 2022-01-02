@@ -6,6 +6,7 @@ import dao.StudentDAOImpl;
 import dto.StudentDTO;
 import entity.Student;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class StudentBOImpl implements StudentBO{
@@ -40,5 +41,10 @@ public class StudentBOImpl implements StudentBO{
     @Override
     public boolean update(StudentDTO customerDTO) throws Exception {
         return false;
+    }
+
+    @Override
+    public String generateNewStudentId() throws SQLException, ClassNotFoundException {
+        return studentDAO.generateId();
     }
 }
