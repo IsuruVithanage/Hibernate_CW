@@ -1,8 +1,6 @@
 package bo;
 
 import dto.ProgramDTO;
-import entity.Program;
-import entity.Student;
 
 import java.sql.SQLException;
 import java.util.List;

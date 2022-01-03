@@ -25,11 +25,27 @@ public class ProgramDAOImpl implements ProgramDAO {
 
     @Override
     public boolean update(Program entity) throws Exception {
-        return false;
+        boolean bool = false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("UPDATE Program SET duration=:duration,fee=:fee WHERE programID=:id");
+        query.setParameter("duration", entity.getDuration());
+        query.setParameter("fee", entity.getFee());
+        query.setParameter("id", entity.getProgramID());
+
+        if (query.executeUpdate() > 0) {
+            bool = true;
+        }
+
+        transaction.commit();
+        session.close();
+        return bool;
     }
 
     @Override
     public boolean delete(String s) throws Exception {
+
         return false;
     }
 
@@ -66,8 +82,8 @@ public class ProgramDAOImpl implements ProgramDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        String hql = "SELECT programID FROM Program ORDER BY programID DESC LIMIT 1";
-        Query sqlQuery = session.createSQLQuery(hql);
+        String hql = "SELECT programID FROM Program ORDER BY programID DESC";
+        Query sqlQuery = session.createQuery(hql);
         List<String> programids = sqlQuery.list();
 
         transaction.commit();

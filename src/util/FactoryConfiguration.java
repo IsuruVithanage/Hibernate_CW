@@ -16,7 +16,7 @@ public class FactoryConfiguration {
 
     private FactoryConfiguration() {
         Configuration configuration = new Configuration();
-        Properties p=new Properties();
+        Properties p = new Properties();
         try {
             p.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("hibernate.properties"));
         } catch (IOException e) {

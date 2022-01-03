@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="contextStd" prefHeight="573.0" prefWidth="723.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentRegFormController">
+<AnchorPane fx:id="contextStd" onMouseClicked="#clear" prefHeight="573.0" prefWidth="723.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentRegFormController">
    <children>
       <ImageView fitHeight="392.0" fitWidth="369.0" layoutX="2.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -42,7 +42,7 @@
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="550.0" layoutY="464.0" text="000 000" textFill="#4cc5bb">
+      <Label fx:id="txtFee" layoutX="550.0" layoutY="464.0" text="000 000" textFill="#4cc5bb">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
@@ -60,18 +60,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField layoutX="389.0" layoutY="62.0" prefHeight="7.0" prefWidth="140.0" promptText="Search" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
-      <JFXButton buttonType="RAISED" layoutX="397.0" layoutY="511.0" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #ff5959; -fx-background-radius: 0.5em;" text="DELETE" textFill="WHITE">
+      <TextField fx:id="txtID" layoutX="389.0" layoutY="62.0" prefHeight="7.0" prefWidth="140.0" promptText="Search" style="-fx-background-color: white; -fx-border-color: #b5b5b5;" />
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="397.0" layoutY="511.0" onMouseClicked="#deleteStudent" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #ff5959; -fx-background-radius: 0.5em;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="573.0" layoutY="62.0" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #4cc5bb;" text="Search" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="62.0" onMouseClicked="#search" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #4cc5bb;" text="Search" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font></JFXButton>
-      <JFXComboBox focusColor="#4cc5bb" layoutX="390.0" layoutY="385.0" prefHeight="25.0" prefWidth="156.0" promptText="Previous Programs" unFocusColor="#4cc5bb" />
-      <TextField layoutX="566.0" layoutY="384.0" prefHeight="25.0" prefWidth="101.0" promptText="Date" style="-fx-border-color: #4cc5bb; -fx-background-color: white;" />
+      <JFXComboBox fx:id="cmbRegProgram" focusColor="#4cc5bb" layoutX="390.0" layoutY="385.0" prefHeight="25.0" prefWidth="156.0" promptText="Previous Programs" unFocusColor="#4cc5bb" />
+      <TextField fx:id="txtRegDate" layoutX="566.0" layoutY="384.0" prefHeight="25.0" prefWidth="101.0" promptText="Date" style="-fx-border-color: #4cc5bb; -fx-background-color: white;" />
       <Label layoutX="564.0" layoutY="432.0" text="Date : ">
          <font>
             <Font name="Arial Bold" size="12.0" />
@@ -96,5 +96,10 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="622.0" layoutY="62.0" onMouseClicked="#clear" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #18b1a5;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

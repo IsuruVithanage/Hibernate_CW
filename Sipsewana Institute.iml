@@ -13,7 +13,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="Sipsewana Institute" />
+          <factory-entry name="Sipsewana Institute" value="16b4fba5-c56b-48e6-b424-f9ead5563cef" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

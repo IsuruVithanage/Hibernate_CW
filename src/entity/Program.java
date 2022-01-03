@@ -1,19 +1,20 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Program implements SuperEntity{
+public class Program implements SuperEntity {
     @Id
     private String programID;
     private String proName;
     private String duration;
     private double fee;
 
-    @OneToMany(mappedBy = "pID")
+    @OneToMany(mappedBy = "pID", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<ProgramData> programDataList;
 
     public Program() {

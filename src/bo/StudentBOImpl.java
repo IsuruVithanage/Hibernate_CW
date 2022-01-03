@@ -2,16 +2,15 @@ package bo;
 
 import dao.DAOFactory;
 import dao.StudentDAO;
-import dao.StudentDAOImpl;
 import dto.StudentDTO;
 import entity.Student;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class StudentBOImpl implements StudentBO{
+public class StudentBOImpl implements StudentBO {
 
-    private final StudentDAO studentDAO=(StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    private final StudentDAO studentDAO = (StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
 
 
     @Override
@@ -34,8 +33,24 @@ public class StudentBOImpl implements StudentBO{
     }
 
     @Override
+    public StudentDTO find(String id) throws Exception {
+        Student student = studentDAO.find(id);
+        return new StudentDTO(
+                student.getStudentID(),
+                student.getName(),
+                student.getAge(),
+                student.getAddress(),
+                student.getDateOfBirth(),
+                student.getAddress(),
+                student.getPhoneNumber(),
+                student.getParentPhoneNumber(),
+                student.getParentName()
+        );
+    }
+
+    @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return studentDAO.delete(id);
     }
 
     @Override

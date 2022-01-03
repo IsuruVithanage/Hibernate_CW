@@ -25,7 +25,7 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public List<ProgramDTO> findAll() throws Exception {
-        ArrayList<ProgramDTO> programDTOS=new ArrayList<>();
+        ArrayList<ProgramDTO> programDTOS = new ArrayList<>();
         List<Program> all = programDAO.findAll();
         for (Program program : all) {
             programDTOS.add(new ProgramDTO(
@@ -51,7 +51,12 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public boolean update(ProgramDTO programDTO) throws Exception {
-        return false;
+        return programDAO.update(new Program(
+                programDTO.getProgramID(),
+                programDTO.getProName(),
+                programDTO.getDuration(),
+                programDTO.getFee()
+        ));
     }
 
     @Override

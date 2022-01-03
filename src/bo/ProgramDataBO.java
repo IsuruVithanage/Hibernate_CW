@@ -18,8 +18,11 @@ public interface ProgramDataBO extends SuperBO {
 
     boolean update(ProgramDataDTO programDataDTO) throws Exception;
 
-    String generateNewStudentId() throws SQLException, ClassNotFoundException;
+    String generateNewProgramDataId() throws SQLException, ClassNotFoundException;
 
     Program getProgram(String id) throws Exception;
+
     Student getStudent(String id) throws Exception;
+
+    List<ProgramDataDTO> getregProgram(String id) throws Exception;
 }

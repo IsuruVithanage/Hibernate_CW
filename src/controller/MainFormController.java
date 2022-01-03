@@ -10,10 +10,10 @@ public class MainFormController {
     public AnchorPane context;
 
     public void openStudentDetail(MouseEvent mouseEvent) throws IOException {
-        LoadFXMLFile.load("StudentRegistrationForm",context);
+        LoadFXMLFile.load("StudentRegistrationForm", context);
     }
 
     public void openProgramDetails(MouseEvent mouseEvent) throws IOException {
-        LoadFXMLFile.load("ProgramForm",context);
+        LoadFXMLFile.load("ProgramForm", context);
     }
 }

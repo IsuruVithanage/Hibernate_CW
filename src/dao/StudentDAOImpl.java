@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Program;
 import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -31,7 +30,21 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        boolean bool = false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("DELETE FROM Student WHERE studentID=:id");
+        query.setParameter("id", s);
+
+        if (query.executeUpdate() > 0) {
+            bool = true;
+        }
+
+
+        transaction.commit();
+        session.close();
+        return bool;
     }
 
     @Override

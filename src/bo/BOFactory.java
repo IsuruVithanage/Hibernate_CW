@@ -27,6 +27,6 @@ public class BOFactory {
     }
 
     public enum BoTypes {
-        STUDENT,PROGRAM,PROGRAMDATA
+        STUDENT, PROGRAM, PROGRAMDATA
     }
 }

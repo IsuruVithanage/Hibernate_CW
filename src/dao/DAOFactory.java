@@ -28,6 +28,6 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENT,PROGRAM,PROGRAMDATA
+        STUDENT, PROGRAM, PROGRAMDATA
     }
 }

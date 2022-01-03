@@ -1,6 +1,6 @@
 package dto;
 
-public class ProgramDTO{
+public class ProgramDTO {
     private String programID;
     private String proName;
     private String duration;
