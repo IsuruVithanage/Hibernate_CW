@@ -45,8 +45,21 @@ public class ProgramDAOImpl implements ProgramDAO {
 
     @Override
     public boolean delete(String s) throws Exception {
+        boolean bool = false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
-        return false;
+        Query query = session.createQuery("DELETE FROM Program WHERE programID=:id");
+        query.setParameter("id", s);
+
+        if (query.executeUpdate() > 0) {
+            bool = true;
+        }
+
+
+        transaction.commit();
+        session.close();
+        return bool;
     }
 
     @Override

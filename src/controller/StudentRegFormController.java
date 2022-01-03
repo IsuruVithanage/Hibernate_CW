@@ -321,22 +321,6 @@ public class StudentRegFormController {
             Optional<ButtonType> result = alert.showAndWait();
 
             if (result.get() == ButtonType.OK) {
-            /*try {
-                if (programDataBO.delete(lbsID.getText())) {
-
-                    Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                    alert2.setTitle("Message");
-                    alert2.setContentText("Saved..");
-                    alert2.show();
-
-
-                } else {
-                    new Alert(Alert.AlertType.WARNING, "Try Again..").show();
-                }
-            } catch (Exception e) {
-                new Alert(Alert.AlertType.WARNING, "Try Again..").show();
-            }*/
-
                 boolean bool = false;
                 for (ProgramDataDTO programDataDTO : all) {
                     bool = programDataBO.delete(programDataDTO.getId());

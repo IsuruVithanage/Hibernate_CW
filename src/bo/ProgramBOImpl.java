@@ -46,7 +46,7 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return programDAO.delete(id);
     }
 
     @Override

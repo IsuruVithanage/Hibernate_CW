@@ -2,8 +2,10 @@ package controller;
 
 import bo.BOFactory;
 import bo.ProgramBO;
+import bo.ProgramDataBO;
 import com.jfoenix.controls.JFXButton;
 import dto.ProgramDTO;
+import dto.ProgramDataDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
@@ -20,6 +22,7 @@ import java.util.Optional;
 
 public class ProgramFormController {
     private final ProgramBO programBO = (ProgramBO) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAM);
+    private final ProgramDataBO programDataBO = (ProgramDataBO) BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAMDATA);
     public AnchorPane contextPro;
     public TextField txtName;
     public TextField txtDuration;
@@ -204,6 +207,45 @@ public class ProgramFormController {
             } catch (Exception e) {
                 new Alert(Alert.AlertType.WARNING, e.getClass().getSimpleName()).show();
             }
+        }
+
+    }
+
+    public void deleteProgram(MouseEvent mouseEvent) {
+        try {
+            List<ProgramDataDTO> all = programDataBO.findAll();
+            all.removeIf(programDataDTO -> !programDataDTO.getpID().equals(lbID.getText()));
+
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if (result.get() == ButtonType.OK) {
+                boolean bool = false;
+                for (ProgramDataDTO programDataDTO : all) {
+                    bool = programDataBO.delete(programDataDTO.getId());
+                }
+                if (bool && programBO.delete(lbID.getText())) {
+
+                    Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+                    alert2.setTitle("Message");
+                    alert2.setContentText("Saved..");
+                    alert2.show();
+
+                    obList.remove(rowNumber);
+                    tblProgram.refresh();
+
+
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Try Again..").show();
+                }
+
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
